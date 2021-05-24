@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>Homepage</title>
+  <script src="largeFileUploader.js"></script>
+</head>
+<body>
+  
+    <ul>
+        <% rooms.forEach(room => {%>
+            <li><a href="/<%= room.roomId%>" ><%= room.roomName %></a></li>
+        <% })%>
+    </ul>
+
+  
+  <form method="POST" action="/addroom">
+    <h3>Create Room</h3>
+    <label for="roomName">Room Name: </label>
+    <input type="text" name="roomName" id="roomName">
+    <button type="submit">Submit</button>
+  </form>
+
+  <input type="file" id="large-file-upload">
+</body>
+</html>

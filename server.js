@@ -49,6 +49,8 @@ app.post('/addroom', (req, res) => {
 
 io.on('connection', socket => {
   socket.on('join-room', (roomId, userId) => {
+    console.log("RoomId: " + roomId)
+    console.log("userId: " + userId)
     socket.join(roomId)
     socket.to(roomId).broadcast.emit('user-connected', userId)
 
@@ -58,4 +60,6 @@ io.on('connection', socket => {
   })
 })
 
-server.listen(3000)
+server.listen(3000, () => {
+  console.log('Server started')
+});

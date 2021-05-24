@@ -6,6 +6,10 @@ const myVideo = document.createElement('video');
 myVideo.muted = true;
 const peers = {};
 
+var getUrl = window.location;
+var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.port;
+
+
 
 navigator.mediaDevices.getUserMedia({
     video: true,
